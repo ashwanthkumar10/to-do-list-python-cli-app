@@ -1,2 +1,5 @@
-[{"id": 1, "task": "task 1", "status": "pending", "created_at": "19/02/2026 19:08:00"}, 
-{"id": 2, "task": "task 2", "status": "pending", "created_at": "19/02/2026 19:08:04"}]
+[{"id": 1, "task": "task 1", "status": "completed", "created_at": "19/02/2026 19:08:00"}, 
+{"id": 2, "task": "task 2", "status": "completed", "created_at": "19/02/2026 19:08:04"}, 
+{"id": 3, "task": "3", "status": "completed", "created_at": "20/02/2026 11:45:53"},
+ {"id": 4, "task": "task 4", "status": "pending", "created_at": "20/02/2026 12:49:24"}, 
+ {"id": 5, "task": "1", "status": "pending", "created_at": "20/02/2026 13:56:22"}]

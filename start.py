@@ -35,10 +35,43 @@ while(True):
         print(f"To do added suucessfully! ID : {storing_dict["id"]})" )
         with open('todo.json', 'w') as json_file:
             json.dump(data, json_file)
+    if get_task_item_input == 2:
+        completed_status = []
+        pending_status = []
+        for item in data:
+            status = item["status"]
+            if status=="pending":
+                completed_status.append(item)
+            else:
+                pending_status.append(item)    
+
+        for item in completed_status:
+            print("[",item["id"] , "]" , item["task"] , "(" ,item["created_at"],")")
+        for item in pending_status:
+            print("[",item["id"] , "]" , item["task"] , "(" ,item["created_at"],")")
+
+    if get_task_item_input == 3:
+        get_id_to_mark_as_complete = int(input("Enter todo ID to mark as complete: "))
+        for item in data:
+            inserted_id = item["id"]
+            if inserted_id == get_id_to_mark_as_complete:
+                item["status"] = "completed"
+            else:
+                continue     
+        # with open('todo.json', 'w') as json_file:
+        #     json.dump(data, json_file)
+    if get_task_item_input == 4:
+        get_id_to_delete = int(input("Enter todo ID to delete : "))
+        for item in data:
+            inserted_id = item["id"]
+            if inserted_id == get_id_to_delete:
+                data.pop(inserted_id)
+            else:
+                continue    
+        # with open('todo.json', 'w') as json_file:
+        #     json.dump(data, json_file)                      
     elif get_task_item_input == 5:  
         exit()
-    else:
-        print("let's stop this here ")
 
 
 
