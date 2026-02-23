@@ -58,18 +58,22 @@ while(True):
                 item["status"] = "completed"
             else:
                 continue     
-        # with open('todo.json', 'w') as json_file:
-        #     json.dump(data, json_file)
+        with open('todo.json', 'w') as json_file:
+            json.dump(data, json_file)
     if get_task_item_input == 4:
         get_id_to_delete = int(input("Enter todo ID to delete : "))
-        for item in data:
-            inserted_id = item["id"]
+        for index , item  in enumerate(data):
+            inserted_id = item["id"] # 1 
+            if inserted_id not in data:
+                print("Item not found ,Please enter another element")
+                break
             if inserted_id == get_id_to_delete:
-                data.pop(inserted_id)
+                data.pop(index)
+                print(f"Task with ID: {inserted_id} deleted")
             else:
                 continue    
-        # with open('todo.json', 'w') as json_file:
-        #     json.dump(data, json_file)                      
+        with open('todo.json', 'w') as json_file:
+            json.dump(data, json_file)                      
     elif get_task_item_input == 5:  
         exit()
 
